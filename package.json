@@ -1,0 +1,23 @@
+{
+  "name": "estudio-videos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Videos de marca con Remotion (ProDrivers, Fruit Santé y otras marcas)",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "node scripts/render.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.539",
+    "@remotion/fonts": "4.0.539",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "remotion": "4.0.539"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}
