@@ -25,7 +25,12 @@ const correr = (cmd) => {
 
 let ids = args.filter((a) => !a.startsWith('--'));
 if (ids.length === 0) {
-	ids = correr(['compositions', '--quiet']).trim().split(/\s+/).filter(Boolean);
+	// La lista viene en la última línea; antes pueden salir avisos (p. ej. la
+	// descarga del navegador), así que solo se aceptan ids válidos.
+	const lineas = correr(['compositions', '--quiet']).trim().split('\n');
+	ids = (lineas.at(-1) ?? '')
+		.split(/\s+/)
+		.filter((id) => /^[A-Za-z0-9-]+$/.test(id));
 }
 if (marca) ids = ids.filter((id) => id.startsWith(`${marca}-`));
 if (ids.length === 0) {

@@ -27,6 +27,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run typecheck
+      - name: Descargar navegador
+        run: npx remotion browser ensure
       - name: Generar MP4
         env:
           VIDEOS: ${{ github.event.inputs.videos }}
