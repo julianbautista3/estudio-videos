@@ -3,7 +3,7 @@ name: Generar videos
 on:
   push:
     branches: [main]
-    paths: ['src/**', 'public/**', 'package.json', 'package-lock.json']
+    paths: ['src/**', 'public/**', 'scripts/**', '.github/workflows/**', 'package.json', 'package-lock.json']
   workflow_dispatch:
     inputs:
       videos:
